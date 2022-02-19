@@ -13,14 +13,17 @@
     // scrollbar-color: #6969dd #e0e0e0;
     // scrollbar-width: thin;
     
-  
+    .empty-message{
+      font-size: 18px;
+      margin: 15px auto;
+      
+    }
     .cart-items {
       height: 240px;
       display: flex;
       flex-direction: column;
-      overflow-y: scroll;
-      scrollbar-color: #6969dd #e0e0e0;
-    scrollbar-width: thin;
+      overflow:auto ;
+      
     }
   
     button {
