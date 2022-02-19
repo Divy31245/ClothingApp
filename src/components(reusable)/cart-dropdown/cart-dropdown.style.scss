@@ -10,12 +10,17 @@
     top: 90px;
     right: 40px;
     z-index: 5;
+    // scrollbar-color: #6969dd #e0e0e0;
+    // scrollbar-width: thin;
+    
   
     .cart-items {
       height: 240px;
       display: flex;
       flex-direction: column;
-      overflow: scroll;
+      overflow-y: scroll;
+      scrollbar-color: #6969dd #e0e0e0;
+    scrollbar-width: thin;
     }
   
     button {
