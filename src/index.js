@@ -4,12 +4,18 @@ import  {BrowserRouter}  from 'react-router-dom';
 import './index.css';
 import { Provider } from 'react-redux';
 import App from './App';
-import store from './redux/store'
+import {store , persistor} from './redux/store'
+
+import {PersistGate} from 'redux-persist/es/integration/react'
+
 
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+    <PersistGate  persistor={persistor}>
+        <App />
+    </PersistGate>
+      
     </BrowserRouter>
   </Provider>
      
