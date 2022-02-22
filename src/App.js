@@ -5,12 +5,15 @@ import { Homepage } from "./pages/homepage/homepage.component";
 import { Route, Switch,Redirect } from "react-router-dom";
 import Header from "./components(reusable)/header/header.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import { auth, createUserProfileDocument  } from "./firebase/firebase.utils";
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { createStructuredSelector } from "reselect";
 import CheckoutPage from "./pages/checkout/checkout.component";
+
+
+
 class App extends React.Component {
   
   unsubscribedFromAuth = null;
@@ -32,6 +35,7 @@ class App extends React.Component {
         });
       } else {
         setCurrentUser( userAuth );
+        
       }
     });
   }
@@ -55,7 +59,8 @@ class App extends React.Component {
   }
 }
 const mapStateToProps = createStructuredSelector({
-    currentUser: selectCurrentUser
+    currentUser: selectCurrentUser,
+    
 })
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
